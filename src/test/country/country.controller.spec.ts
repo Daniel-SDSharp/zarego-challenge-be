@@ -33,10 +33,4 @@ describe('CountryController', () => {
     expect(result).toEqual([]);
     expect(service.findAll).toHaveBeenCalled();
   });
-
-  it('should return country by name', async () => {
-    const result = await controller.findByName('USA');
-    expect(result).toEqual({});
-    expect(service.findByCountries).toHaveBeenCalled();
-  });
 });

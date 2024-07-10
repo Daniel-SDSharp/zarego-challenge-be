@@ -9,19 +9,8 @@ export class CountryService {
     @InjectModel(Country.name) private countryModel: Model<Country>,
   ) { }
 
-  // Create a new country entry
-  async create(country: Country): Promise<Country> {
-    const createdCountry = new this.countryModel(country);
-    return createdCountry.save();
-  }
-
   // Retrieve all countries
   async findAll(): Promise<Country[]> {
     return this.countryModel.find().exec();
-  }
-
-  // Find a country by name
-  async findByCountries(list: string): Promise<Country> {
-    return this.countryModel.findOne({ country: { $in: list } }).exec();
   }
 }

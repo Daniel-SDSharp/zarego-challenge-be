@@ -33,9 +33,4 @@ describe('CountryService', () => {
     const result = await service.findAll();
     expect(result).toEqual([]);
   });
-
-  it('should return a country by name', async () => {
-    const result = await service.findByCountries('USA');
-    expect(result).toEqual({});
-  });
 });

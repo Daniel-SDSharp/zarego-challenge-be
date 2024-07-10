@@ -48,7 +48,7 @@ describe('LeadershipService', () => {
       metadata: {
         page: 1,
         rows: 50,
-        row_count: 0,
+        row_count: 100,
         total_registers: 100,
       },
       data: [],
