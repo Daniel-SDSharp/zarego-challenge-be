@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
+// Model for each country's data
 @Schema()
 export class Country extends Document {
   @Prop({ unique: true })

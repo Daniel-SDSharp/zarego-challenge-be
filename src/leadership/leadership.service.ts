@@ -9,6 +9,7 @@ export class LeadershipService {
     @InjectModel(Leadership.name) private leadershipModel: Model<Leadership>,
   ) { }
 
+  // List all leadership data with pagination
   async listAll(
     page: number = 1,
     rows: number = 50,
@@ -33,6 +34,7 @@ export class LeadershipService {
     };
   }
 
+  // Find leadership data by a list of countries with pagination
   async findByCountries(
     countries: string[],
     page: number = 1,

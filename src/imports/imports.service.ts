@@ -16,6 +16,7 @@ export class ImportsService {
     @InjectModel(Leadership.name) private leadershipModel: Model<Leadership>,
   ) { }
 
+  // Import data from a CSV file and store it in the database
   async importDataFromCsv(): Promise<void> {
     const filePath = path.join('../zarego-be/src/input/globaldatainput.csv');
 

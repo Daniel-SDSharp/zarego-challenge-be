@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
+// Model for each country's leadership data
 @Schema()
 export class Leadership extends Document {
   @Prop({ required: true })

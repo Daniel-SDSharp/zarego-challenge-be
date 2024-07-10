@@ -6,6 +6,7 @@ import { Leadership } from '../schemas/leadership.schema';
 export class LeadershipController {
   constructor(private readonly leadershipService: LeadershipService) { }
 
+  // Endpoint to list all leadership data with pagination
   @Get('all')
   async listAll(
     @Query('page') page: number = 1,
@@ -14,6 +15,7 @@ export class LeadershipController {
     return this.leadershipService.listAll(page, rows);
   }
 
+  // Endpoint to find leadership data by a list of countries with pagination
   @Get('countries')
   async findByCountries(
     @Query('list') countries: string,
