@@ -10,7 +10,7 @@ export class Leadership extends Document {
   @Prop({ required: true })
   country_name: string;
 
-  @Prop({ required: true })
+  @Prop()
   performance_oriented: number;
 
   @Prop({ required: true })
@@ -19,7 +19,7 @@ export class Leadership extends Document {
   @Prop({ required: true })
   modesty: number;
 
-  @Prop({ required: false })
+  @Prop()
   country_cluster: string;
 
   @Prop({ required: true })
