@@ -18,7 +18,7 @@ export class CountryService {
     return this.countryModel.find().exec();
   }
 
-  async findByName(country_name: string): Promise<Country> {
-    return this.countryModel.findOne({ country_name }).exec();
+  async findByCountries(list: string): Promise<Country> {
+    return this.countryModel.findOne({ country: { $in: list } }).exec();
   }
 }

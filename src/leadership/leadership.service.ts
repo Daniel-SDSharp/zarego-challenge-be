@@ -9,15 +9,52 @@ export class LeadershipService {
     @InjectModel(Leadership.name) private leadershipModel: Model<Leadership>,
   ) { }
 
-  async listAll(): Promise<Leadership[]> {
-    try {
-      return this.leadershipModel.find().exec();
-    } catch (err) {
-      console.error(`Failed to read CSV data from local file: ${err.message}`);
-    }
+  async listAll(
+    page: number = 1,
+    rows: number = 50,
+  ): Promise<{
+    metadata: any;
+    data: Leadership[];
+  }> {
+    const totalRegisters = await this.leadershipModel.countDocuments();
+    const data = await this.leadershipModel
+      .find()
+      .skip((page - 1) * rows)
+      .limit(rows)
+      .exec();
+
+    return {
+      metadata: {
+        page,
+        rows,
+        total_registers: totalRegisters,
+      },
+      data,
+    };
   }
 
-  async findByCountries(countries: string[]): Promise<Leadership[]> {
-    return this.leadershipModel.find({ country: { $in: countries } }).exec();
+  async findByCountries(
+    countries: string[],
+    page: number = 1,
+    rows: number = 50,
+  ): Promise<{ metadata: any; data: Leadership[] }> {
+    const query = { id: { $in: countries } };
+    const totalRegisters = await this.leadershipModel.countDocuments();
+    const rowCount = await this.leadershipModel.find(query).countDocuments();
+    const data = await this.leadershipModel
+      .find(query)
+      .skip((page - 1) * rows)
+      .limit(rows)
+      .exec();
+
+    return {
+      metadata: {
+        page,
+        rows,
+        row_count: rowCount,
+        total_registers: totalRegisters,
+      },
+      data,
+    };
   }
 }

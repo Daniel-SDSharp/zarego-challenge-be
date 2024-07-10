@@ -11,8 +11,8 @@ export class CountryController {
     return this.countryService.findAll();
   }
 
-  @Get('findByName')
-  async findByName(@Query('name') name: string): Promise<Country> {
-    return this.countryService.findByName(name);
+  @Get('countries')
+  async findByName(@Query('list') list: string): Promise<Country> {
+    return this.countryService.findByCountries(list);
   }
 }
