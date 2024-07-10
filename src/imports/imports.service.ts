@@ -34,7 +34,7 @@ export class ImportsService {
           const leadershipEntry: Partial<Leadership> = {
             id: data.Country,
             country_name: data['Country Name'],
-            performance_oriented: data['Performmance Oriented'],
+            performance_oriented: data['Performance Oriented'],
             autocratic: parseFloat(data['Autocratic']),
             modesty: parseFloat(data['Modesty']),
             country_cluster: data['Country Cluster'],
