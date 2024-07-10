@@ -52,14 +52,6 @@ $ npm run start:prod
 - **Description:** Retrieves a list of all countries.
 - **Example:** GET http://localhost:3000/leadership/countries
 
-#### Find Country by Name
-
-- **Endpoint:** `GET /countries/countries`
-- **Query Parameters:**
-  - `list` (required) - A comma-separated list of country names.
-- **Description:** Retrieves the country details for the specified country names.
-- **Example:** GET http://localhost:3000/countries/countries
-
 ### Imports Controller
 
 #### Import Data from CSV
