@@ -43,7 +43,7 @@ describe('LeadershipService', () => {
   });
 
   it('should return leadership data by countries', async () => {
-    const result = await service.findByCountries(['USA', 'Canada'], 1, 50);
+    const result = await service.findByCountries(['8', '9'], 1, 50);
     expect(result).toEqual({
       metadata: {
         page: 1,
