@@ -40,7 +40,7 @@ describe('LeadershipController', () => {
   });
 
   it('should return leadership data by countries', async () => {
-    const result = await controller.findByCountries('USA,Canada', 1, 50);
+    const result = await controller.findByCountries('8,9', 1, 50);
     expect(result).toEqual({ metadata: {}, data: [] });
     expect(service.findByCountries).toHaveBeenCalled();
   });
